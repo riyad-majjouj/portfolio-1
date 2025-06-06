@@ -1,7 +1,7 @@
 
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Box, Sphere, Torus } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { TerminalWindow } from '../TerminalWindow';
 
 const Scene = () => {
@@ -11,17 +11,20 @@ const Scene = () => {
       <directionalLight position={[0, 0, 5]} intensity={0.5} />
       <pointLight position={[10, 10, 10]} intensity={1} color="#00ff41" />
       
-      <Box position={[-2, 0, 0]} args={[1, 1, 1]}>
+      <mesh position={[-2, 0, 0]}>
+        <boxGeometry args={[1, 1, 1]} />
         <meshStandardMaterial color="#00ff41" wireframe />
-      </Box>
+      </mesh>
       
-      <Sphere position={[0, 0, 0]} args={[0.8, 16, 16]}>
+      <mesh position={[0, 0, 0]}>
+        <sphereGeometry args={[0.8, 16, 16]} />
         <meshStandardMaterial color="#39ff14" transparent opacity={0.7} />
-      </Sphere>
+      </mesh>
       
-      <Torus position={[2, 0, 0]} args={[0.8, 0.3, 16, 100]}>
+      <mesh position={[2, 0, 0]}>
+        <torusGeometry args={[0.8, 0.3, 16, 100]} />
         <meshStandardMaterial color="#00cc33" wireframe />
-      </Torus>
+      </mesh>
       
       <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
     </>
