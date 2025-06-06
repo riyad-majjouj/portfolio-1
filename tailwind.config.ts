@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,34 +62,61 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Terminal/Hacker theme colors
+				terminal: {
+					bg: '#0a0a0a',
+					primary: '#00ff41',
+					secondary: '#00cc33',
+					accent: '#39ff14',
+					muted: '#008f11',
+					border: '#00ff41',
+					text: '#c0c0c0'
+				}
+			},
+			fontFamily: {
+				mono: ['JetBrains Mono', 'Courier New', 'monospace'],
+				terminal: ['Source Code Pro', 'Consolas', 'monospace']
+			},
+			animation: {
+				'blink': 'blink 1s infinite',
+				'typewriter': 'typewriter 3s steps(40) infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'matrix': 'matrix 20s linear infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'scan': 'scan 2s linear infinite'
+			},
+			keyframes: {
+				blink: {
+					'0%, 50%': { opacity: '1' },
+					'51%, 100%': { opacity: '0' }
+				},
+				typewriter: {
+					'0%': { width: '0' },
+					'50%': { width: '100%' },
+					'100%': { width: '0' }
+				},
+				glow: {
+					'0%': { boxShadow: '0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41' },
+					'100%': { boxShadow: '0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41' }
+				},
+				matrix: {
+					'0%': { transform: 'translateY(-100%)' },
+					'100%': { transform: 'translateY(100vh)' }
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-20px)' }
+				},
+				scan: {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100vw)' }
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
-			},
-			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
-			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
